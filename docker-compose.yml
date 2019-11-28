@@ -1,0 +1,14 @@
+version: '2'
+services:
+  tesseract:
+    container_name: ocr
+    build: .
+    volumes:
+      - ./data:/home/wk
+    ports:
+      - "22:22"
+
+    working_dir: /home/wk
+    tty: true
+    stdin_open: true
+    privileged: true
